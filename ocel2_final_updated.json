@@ -1,0 +1,2236 @@
+{
+  "objectTypes": [
+    {
+      "name": "Document",
+      "attributes": [
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "Type",
+          "type": "string"
+        },
+        {
+          "name": "Version",
+          "type": "string"
+        },
+        {
+          "name": "Revision cycle",
+          "type": "string"
+        },
+        {
+          "name": "Archive duration",
+          "type": "integer"
+        },
+        {
+          "name": "Status",
+          "type": "string"
+        },
+        {
+          "name": "Valid from",
+          "type": "date"
+        },
+        {
+          "name": "Valid to",
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "name": "Author",
+      "attributes": [
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "Role",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Reviewer",
+      "attributes": [
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "Role",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Approver",
+      "attributes": [
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "Role",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Distribution List",
+      "attributes": [
+        {
+          "name": "Recipients",
+          "type": "list"
+        }
+      ]
+    },
+    {
+      "name": "Folder for Change Proposals",
+      "attributes": [
+        {
+          "name": "Change Proposals",
+          "type": "list"
+        }
+      ]
+    },
+    {
+      "name": "Change Proposal",
+      "attributes": [
+        {
+          "name": "Description",
+          "type": "string"
+        },
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Comment Document",
+      "attributes": [
+        {
+          "name": "Content",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Version History",
+      "attributes": [
+        {
+          "name": "Version",
+          "type": "string"
+        },
+        {
+          "name": "Changes",
+          "type": "string"
+        },
+        {
+          "name": "Date",
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "name": "Attachment",
+      "attributes": [
+        {
+          "name": "File",
+          "type": "string"
+        },
+        {
+          "name": "Version",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "attributes": [
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "Role",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Create document",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "type": "date-time"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Edit document",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "type": "date-time"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Start approval workflow",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "type": "date-time"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Sign as author",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "type": "date-time"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Sign as reviewer",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "type": "date-time"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Sign as approver",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "type": "date-time"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Publish document",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "type": "date-time"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Edit and update document",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "type": "date-time"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "Aut1",
+      "type": "Author",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Alice"
+        },
+        {
+          "name": "Role",
+          "value": "Creator"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "created by"
+        }
+      ]
+    },
+    {
+      "id": "Aut2",
+      "type": "Author",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Bob"
+        },
+        {
+          "name": "Role",
+          "value": "Editor"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "created by"
+        }
+      ]
+    },
+    {
+      "id": "Aut3",
+      "type": "Author",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Carol"
+        },
+        {
+          "name": "Role",
+          "value": "Writer"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "created by"
+        }
+      ]
+    },
+    {
+      "id": "Aut4",
+      "type": "Author",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "David"
+        },
+        {
+          "name": "Role",
+          "value": "Reviewer"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "created by"
+        }
+      ]
+    },
+    {
+      "id": "Aut5",
+      "type": "Author",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Emma"
+        },
+        {
+          "name": "Role",
+          "value": "Creator"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc5",
+          "qualifier": "created by"
+        }
+      ]
+    },
+    {
+      "id": "Aut6",
+      "type": "Author",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Frank"
+        },
+        {
+          "name": "Role",
+          "value": "Editor"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc6",
+          "qualifier": "created by"
+        }
+      ]
+    },
+    {
+      "id": "Aut7",
+      "type": "Author",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Grace"
+        },
+        {
+          "name": "Role",
+          "value": "Writer"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "involved in"
+        }
+      ]
+    },
+    {
+      "id": "Doc1",
+      "type": "Document",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Document 1"
+        },
+        {
+          "name": "Type",
+          "value": "Technical"
+        },
+        {
+          "name": "Version",
+          "value": "1.0"
+        },
+        {
+          "name": "Revision cycle",
+          "value": "Initial"
+        },
+        {
+          "name": "Archive duration",
+          "value": 5
+        },
+        {
+          "name": "Status",
+          "value": "Draft"
+        },
+        {
+          "name": "Valid from",
+          "value": "2023-01-01"
+        },
+        {
+          "name": "Valid to",
+          "value": "2025-01-01"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Aut1",
+          "qualifier": "created by"
+        },
+        {
+          "objectId": "Rev1",
+          "qualifier": "reviewed by"
+        },
+        {
+          "objectId": "App1",
+          "qualifier": "approved by"
+        },
+        {
+          "objectId": "Dist1",
+          "qualifier": "distributed to"
+        },
+        {
+          "objectId": "Hist1",
+          "qualifier": "tracked by"
+        }
+      ]
+    },
+    {
+      "id": "Doc2",
+      "type": "Document",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Document 2"
+        },
+        {
+          "name": "Type",
+          "value": "Financial"
+        },
+        {
+          "name": "Version",
+          "value": "2.0"
+        },
+        {
+          "name": "Revision cycle",
+          "value": "Second"
+        },
+        {
+          "name": "Archive duration",
+          "value": 4
+        },
+        {
+          "name": "Status",
+          "value": "Approved"
+        },
+        {
+          "name": "Valid from",
+          "value": "2023-02-01"
+        },
+        {
+          "name": "Valid to",
+          "value": "2024-02-01"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Aut2",
+          "qualifier": "created by"
+        },
+        {
+          "objectId": "Rev2",
+          "qualifier": "reviewed by"
+        },
+        {
+          "objectId": "App2",
+          "qualifier": "approved by"
+        },
+        {
+          "objectId": "Dist2",
+          "qualifier": "distributed to"
+        },
+        {
+          "objectId": "Hist2",
+          "qualifier": "tracked by"
+        }
+      ]
+    },
+    {
+      "id": "Doc3",
+      "type": "Document",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Document 3"
+        },
+        {
+          "name": "Type",
+          "value": "HR"
+        },
+        {
+          "name": "Version",
+          "value": "1.0"
+        },
+        {
+          "name": "Revision cycle",
+          "value": "Initial"
+        },
+        {
+          "name": "Archive duration",
+          "value": 3
+        },
+        {
+          "name": "Status",
+          "value": "Draft"
+        },
+        {
+          "name": "Valid from",
+          "value": "2023-03-01"
+        },
+        {
+          "name": "Valid to",
+          "value": "2024-03-01"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Aut3",
+          "qualifier": "created by"
+        },
+        {
+          "objectId": "Rev3",
+          "qualifier": "reviewed by"
+        },
+        {
+          "objectId": "App3",
+          "qualifier": "approved by"
+        },
+        {
+          "objectId": "Dist3",
+          "qualifier": "distributed to"
+        },
+        {
+          "objectId": "Hist3",
+          "qualifier": "tracked by"
+        }
+      ]
+    },
+    {
+      "id": "Doc4",
+      "type": "Document",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Document 4"
+        },
+        {
+          "name": "Type",
+          "value": "Legal"
+        },
+        {
+          "name": "Version",
+          "value": "1.1"
+        },
+        {
+          "name": "Revision cycle",
+          "value": "First"
+        },
+        {
+          "name": "Archive duration",
+          "value": 3
+        },
+        {
+          "name": "Status",
+          "value": "Final"
+        },
+        {
+          "name": "Valid from",
+          "value": "2023-04-01"
+        },
+        {
+          "name": "Valid to",
+          "value": "2024-04-01"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Aut4",
+          "qualifier": "created by"
+        },
+        {
+          "objectId": "Rev4",
+          "qualifier": "reviewed by"
+        },
+        {
+          "objectId": "App4",
+          "qualifier": "approved by"
+        },
+        {
+          "objectId": "Dist4",
+          "qualifier": "distributed to"
+        },
+        {
+          "objectId": "Hist4",
+          "qualifier": "tracked by"
+        }
+      ]
+    },
+    {
+      "id": "Doc5",
+      "type": "Document",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Document 5"
+        },
+        {
+          "name": "Type",
+          "value": "Marketing"
+        },
+        {
+          "name": "Version",
+          "value": "1.0"
+        },
+        {
+          "name": "Revision cycle",
+          "value": "Initial"
+        },
+        {
+          "name": "Archive duration",
+          "value": 5
+        },
+        {
+          "name": "Status",
+          "value": "Published"
+        },
+        {
+          "name": "Valid from",
+          "value": "2023-05-01"
+        },
+        {
+          "name": "Valid to",
+          "value": "2025-05-01"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Aut5",
+          "qualifier": "created by"
+        },
+        {
+          "objectId": "Rev5",
+          "qualifier": "reviewed by"
+        },
+        {
+          "objectId": "App5",
+          "qualifier": "approved by"
+        },
+        {
+          "objectId": "Dist5",
+          "qualifier": "distributed to"
+        },
+        {
+          "objectId": "Hist5",
+          "qualifier": "tracked by"
+        }
+      ]
+    },
+    {
+      "id": "Doc6",
+      "type": "Document",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Document 6"
+        },
+        {
+          "name": "Type",
+          "value": "Technical"
+        },
+        {
+          "name": "Version",
+          "value": "1.1"
+        },
+        {
+          "name": "Revision cycle",
+          "value": "Second"
+        },
+        {
+          "name": "Archive duration",
+          "value": 5
+        },
+        {
+          "name": "Status",
+          "value": "Final"
+        },
+        {
+          "name": "Valid from",
+          "value": "2023-06-01"
+        },
+        {
+          "name": "Valid to",
+          "value": "2025-06-01"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Aut6",
+          "qualifier": "created by"
+        },
+        {
+          "objectId": "Rev6",
+          "qualifier": "reviewed by"
+        },
+        {
+          "objectId": "App6",
+          "qualifier": "approved by"
+        },
+        {
+          "objectId": "Dist6",
+          "qualifier": "distributed to"
+        },
+        {
+          "objectId": "Hist6",
+          "qualifier": "tracked by"
+        }
+      ]
+    },
+    {
+      "id": "Rev1",
+      "type": "Reviewer",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Sarah"
+        },
+        {
+          "name": "Role",
+          "value": "Financial Reviewer"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "Rev2",
+      "type": "Reviewer",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "David"
+        },
+        {
+          "name": "Role",
+          "value": "Technical Reviewer"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "Rev3",
+      "type": "Reviewer",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Frank"
+        },
+        {
+          "name": "Role",
+          "value": "Legal Reviewer"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "Rev4",
+      "type": "Reviewer",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Henry"
+        },
+        {
+          "name": "Role",
+          "value": "HR Reviewer"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "Rev5",
+      "type": "Reviewer",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Irene"
+        },
+        {
+          "name": "Role",
+          "value": "Marketing Reviewer"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc5",
+          "qualifier": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "App1",
+      "type": "Approver",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Charlie"
+        },
+        {
+          "name": "Role",
+          "value": "Manager"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "approved"
+        }
+      ]
+    },
+    {
+      "id": "App2",
+      "type": "Approver",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Emma"
+        },
+        {
+          "name": "Role",
+          "value": "Director"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "approved"
+        }
+      ]
+    },
+    {
+      "id": "App3",
+      "type": "Approver",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Frank"
+        },
+        {
+          "name": "Role",
+          "value": "Head of Department"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "approved"
+        }
+      ]
+    },
+    {
+      "id": "App4",
+      "type": "Approver",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Grace"
+        },
+        {
+          "name": "Role",
+          "value": "CEO"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "approved"
+        }
+      ]
+    },
+    {
+      "id": "App5",
+      "type": "Approver",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Henry"
+        },
+        {
+          "name": "Role",
+          "value": "Head of HR"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc5",
+          "qualifier": "approved"
+        }
+      ]
+    },
+    {
+      "id": "App6",
+      "type": "Approver",
+      "attributes": [
+        {
+          "name": "Name",
+          "value": "Irene"
+        },
+        {
+          "name": "Role",
+          "value": "Director of Operations"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc6",
+          "qualifier": "approved"
+        }
+      ]
+    },
+    {
+      "id": "Dist1",
+      "type": "Distribution List",
+      "attributes": [
+        {
+          "name": "Recipients",
+          "value": [
+            "John",
+            "Alice"
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "distributed to"
+        }
+      ]
+    },
+    {
+      "id": "Dist2",
+      "type": "Distribution List",
+      "attributes": [
+        {
+          "name": "Recipients",
+          "value": [
+            "David",
+            "Emma"
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "distributed to"
+        }
+      ]
+    },
+    {
+      "id": "Dist3",
+      "type": "Distribution List",
+      "attributes": [
+        {
+          "name": "Recipients",
+          "value": [
+            "Sarah",
+            "Bob"
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "distributed to"
+        }
+      ]
+    },
+    {
+      "id": "Dist4",
+      "type": "Distribution List",
+      "attributes": [
+        {
+          "name": "Recipients",
+          "value": [
+            "Carol",
+            "Frank"
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "distributed to"
+        }
+      ]
+    },
+    {
+      "id": "Dist5",
+      "type": "Distribution List",
+      "attributes": [
+        {
+          "name": "Recipients",
+          "value": [
+            "Irene",
+            "Henry"
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc5",
+          "qualifier": "distributed to"
+        }
+      ]
+    },
+    {
+      "id": "Dist6",
+      "type": "Distribution List",
+      "attributes": [
+        {
+          "name": "Recipients",
+          "value": [
+            "John",
+            "Grace"
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc6",
+          "qualifier": "distributed to"
+        }
+      ]
+    },
+    {
+      "id": "Hist1",
+      "type": "Version History",
+      "attributes": [
+        {
+          "name": "Version",
+          "value": "1.0"
+        },
+        {
+          "name": "Changes",
+          "value": "Document created"
+        },
+        {
+          "name": "Date",
+          "value": "2023-01-01"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "tracked"
+        }
+      ]
+    },
+    {
+      "id": "Hist2",
+      "type": "Version History",
+      "attributes": [
+        {
+          "name": "Version",
+          "value": "2.0"
+        },
+        {
+          "name": "Changes",
+          "value": "Major updates to section B."
+        },
+        {
+          "name": "Date",
+          "value": "2023-02-15"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "tracked"
+        }
+      ]
+    },
+    {
+      "id": "Hist3",
+      "type": "Version History",
+      "attributes": [
+        {
+          "name": "Version",
+          "value": "1.1"
+        },
+        {
+          "name": "Changes",
+          "value": "Minor edits in the introduction."
+        },
+        {
+          "name": "Date",
+          "value": "2023-03-01"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "tracked"
+        }
+      ]
+    },
+    {
+      "id": "Hist4",
+      "type": "Version History",
+      "attributes": [
+        {
+          "name": "Version",
+          "value": "2.1"
+        },
+        {
+          "name": "Changes",
+          "value": "Updated legal references."
+        },
+        {
+          "name": "Date",
+          "value": "2023-04-10"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "tracked"
+        }
+      ]
+    },
+    {
+      "id": "Hist5",
+      "type": "Version History",
+      "attributes": [
+        {
+          "name": "Version",
+          "value": "1.0"
+        },
+        {
+          "name": "Changes",
+          "value": "Initial draft submitted for review."
+        },
+        {
+          "name": "Date",
+          "value": "2023-05-01"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc5",
+          "qualifier": "tracked"
+        }
+      ]
+    },
+    {
+      "id": "Hist6",
+      "type": "Version History",
+      "attributes": [
+        {
+          "name": "Version",
+          "value": "2.0"
+        },
+        {
+          "name": "Changes",
+          "value": "Final version approved."
+        },
+        {
+          "name": "Date",
+          "value": "2023-06-01"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc6",
+          "qualifier": "tracked"
+        }
+      ]
+    },
+    {
+      "id": "Attach1",
+      "type": "Attachment",
+      "attributes": [
+        {
+          "name": "File",
+          "value": "document1.pdf"
+        },
+        {
+          "name": "Version",
+          "value": "1.0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "includes"
+        }
+      ]
+    },
+    {
+      "id": "Attach2",
+      "type": "Attachment",
+      "attributes": [
+        {
+          "name": "File",
+          "value": "document2.pdf"
+        },
+        {
+          "name": "Version",
+          "value": "2.0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "includes"
+        }
+      ]
+    },
+    {
+      "id": "Attach3",
+      "type": "Attachment",
+      "attributes": [
+        {
+          "name": "File",
+          "value": "document3.pdf"
+        },
+        {
+          "name": "Version",
+          "value": "1.1"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "includes"
+        }
+      ]
+    },
+    {
+      "id": "Attach4",
+      "type": "Attachment",
+      "attributes": [
+        {
+          "name": "File",
+          "value": "document4.pdf"
+        },
+        {
+          "name": "Version",
+          "value": "1.0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "includes"
+        }
+      ]
+    },
+    {
+      "id": "Attach5",
+      "type": "Attachment",
+      "attributes": [
+        {
+          "name": "File",
+          "value": "document5.pdf"
+        },
+        {
+          "name": "Version",
+          "value": "2.0"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc5",
+          "qualifier": "includes"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "type": "Create document",
+      "time": "2023-01-01T10:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-01-01T10:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Alice"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "created"
+        },
+        {
+          "objectId": "Aut1",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "Rev1",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "App1",
+          "qualifier": "assigned"
+        }
+      ]
+    },
+    {
+      "id": "e2",
+      "type": "Edit document",
+      "time": "2023-01-02T11:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-01-02T11:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Alice"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Hist1",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Attach1",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e3",
+      "type": "Sign as author",
+      "time": "2023-01-04T13:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-01-04T13:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Alice"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "Aut1",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "CommDoc1",
+          "qualifier": "created"
+        }
+      ]
+    },
+    {
+      "id": "e4",
+      "type": "Sign as reviewer",
+      "time": "2023-01-05T14:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-01-05T14:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Sarah"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "Rev1",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "CommDoc1",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e5",
+      "type": "Sign as approver",
+      "time": "2023-01-06T15:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-01-06T15:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Charlie"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "App1",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "Dist1",
+          "qualifier": "triggered for distribution"
+        },
+        {
+          "objectId": "Hist1",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e6",
+      "type": "Publish document",
+      "time": "2023-01-07T16:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-01-07T16:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Alice"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc1",
+          "qualifier": "published"
+        },
+        {
+          "objectId": "Hist1",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Dist1",
+          "qualifier": "triggered for distribution"
+        }
+      ]
+    },
+    {
+      "id": "e7",
+      "type": "Create document",
+      "time": "2023-02-01T10:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-02-01T10:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Bob"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "created"
+        },
+        {
+          "objectId": "Aut2",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "Rev2",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "App2",
+          "qualifier": "assigned"
+        }
+      ]
+    },
+    {
+      "id": "e8",
+      "type": "Edit document",
+      "time": "2023-02-02T11:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-02-02T11:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Bob"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Hist2",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Attach2",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e9",
+      "type": "Sign as author",
+      "time": "2023-02-04T13:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-02-04T13:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Bob"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "Aut2",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "CommDoc2",
+          "qualifier": "created"
+        }
+      ]
+    },
+    {
+      "id": "e10",
+      "type": "Sign as reviewer",
+      "time": "2023-02-05T14:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-02-05T14:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "David"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "Rev2",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "CommDoc2",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e11",
+      "type": "Sign as approver",
+      "time": "2023-02-06T15:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-02-06T15:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Emma"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "App2",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "Dist2",
+          "qualifier": "triggered for distribution"
+        },
+        {
+          "objectId": "Hist2",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e12",
+      "type": "Publish document",
+      "time": "2023-02-07T16:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-02-07T16:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Bob"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc2",
+          "qualifier": "published"
+        },
+        {
+          "objectId": "Hist2",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Dist2",
+          "qualifier": "triggered for distribution"
+        }
+      ]
+    },
+    {
+      "id": "e13",
+      "type": "Create document",
+      "time": "2023-03-01T10:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-03-01T10:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Carol"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "created"
+        },
+        {
+          "objectId": "Aut3",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "Rev3",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "App3",
+          "qualifier": "assigned"
+        }
+      ]
+    },
+    {
+      "id": "e14",
+      "type": "Edit document",
+      "time": "2023-03-02T11:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-03-02T11:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Carol"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Hist3",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Attach3",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e15",
+      "type": "Sign as author",
+      "time": "2023-03-04T13:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-03-04T13:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Carol"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "Aut3",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "CommDoc3",
+          "qualifier": "created"
+        }
+      ]
+    },
+    {
+      "id": "e16",
+      "type": "Sign as reviewer",
+      "time": "2023-03-05T14:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-03-05T14:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Frank"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "Rev3",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "CommDoc3",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e17",
+      "type": "Sign as approver",
+      "time": "2023-03-06T15:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-03-06T15:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Grace"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "App3",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "Dist3",
+          "qualifier": "triggered for distribution"
+        },
+        {
+          "objectId": "Hist3",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e18",
+      "type": "Publish document",
+      "time": "2023-03-07T16:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-03-07T16:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Carol"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc3",
+          "qualifier": "published"
+        },
+        {
+          "objectId": "Hist3",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Dist3",
+          "qualifier": "triggered for distribution"
+        }
+      ]
+    },
+    {
+      "id": "e26",
+      "type": "Create document",
+      "time": "2023-04-01T10:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-04-01T10:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "David"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "created"
+        },
+        {
+          "objectId": "Aut4",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "Rev4",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "App4",
+          "qualifier": "assigned"
+        }
+      ]
+    },
+    {
+      "id": "e27",
+      "type": "Edit document",
+      "time": "2023-04-02T11:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-04-02T11:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "David"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Hist4",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Attach4",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e28",
+      "type": "Sign as approver",
+      "time": "2023-04-06T15:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-04-06T15:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Irene"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "App4",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "Dist4",
+          "qualifier": "triggered for distribution"
+        },
+        {
+          "objectId": "Hist4",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e29",
+      "type": "Publish document",
+      "time": "2023-04-07T16:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-04-07T16:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "David"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "published"
+        },
+        {
+          "objectId": "Hist4",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Dist4",
+          "qualifier": "triggered for distribution"
+        }
+      ]
+    },
+    {
+      "id": "e30",
+      "type": "Create document",
+      "time": "2023-04-01T10:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-04-01T10:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "David"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "created"
+        },
+        {
+          "objectId": "Aut4",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "Rev4",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "App4",
+          "qualifier": "assigned"
+        }
+      ]
+    },
+    {
+      "id": "e31",
+      "type": "Edit document",
+      "time": "2023-04-02T11:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-04-02T11:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "David"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Hist4",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Attach4",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e32",
+      "type": "Sign as approver",
+      "time": "2023-04-06T15:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-04-06T15:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Irene"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "signed"
+        },
+        {
+          "objectId": "App4",
+          "qualifier": "involved"
+        },
+        {
+          "objectId": "Dist4",
+          "qualifier": "triggered for distribution"
+        },
+        {
+          "objectId": "Hist4",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e33",
+      "type": "Publish document",
+      "time": "2023-04-07T16:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-04-07T16:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "David"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc4",
+          "qualifier": "published"
+        },
+        {
+          "objectId": "Hist4",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Dist4",
+          "qualifier": "triggered for distribution"
+        }
+      ]
+    },
+    {
+      "id": "e23",
+      "type": "Create document",
+      "time": "2023-05-01T10:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-05-01T10:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Emma"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc5",
+          "qualifier": "created"
+        },
+        {
+          "objectId": "Aut5",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "Rev5",
+          "qualifier": "assigned"
+        },
+        {
+          "objectId": "App5",
+          "qualifier": "assigned"
+        }
+      ]
+    },
+    {
+      "id": "e24",
+      "type": "Edit document",
+      "time": "2023-05-02T11:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-05-02T11:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Emma"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc5",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Hist5",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Attach5",
+          "qualifier": "updated"
+        }
+      ]
+    },
+    {
+      "id": "e25",
+      "type": "Publish document",
+      "time": "2023-05-07T16:00:00Z",
+      "attributes": [
+        {
+          "name": "time stamp",
+          "value": "2023-05-07T16:00:00Z"
+        },
+        {
+          "name": "resource",
+          "value": "Emma"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Doc5",
+          "qualifier": "published"
+        },
+        {
+          "objectId": "Hist5",
+          "qualifier": "updated"
+        },
+        {
+          "objectId": "Dist5",
+          "qualifier": "triggered for distribution"
+        }
+      ]
+    }
+  ]
+}
